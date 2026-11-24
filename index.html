@@ -6,6 +6,8 @@
     <title>Obradia · Gestión de obra para constructoras</title>
     <meta name="description" content="Obradia conecta presupuestos, compras, producción, certificaciones y control económico de sus obras en una sola aplicación web, también desde el móvil.">
     <meta name="theme-color" content="#F5F4EE">
+    <meta name="color-scheme" content="light dark">
+    <script src="tema.js"></script>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://obradia.net/">
     <meta property="og:title" content="Obradia · Gestión de obra para constructoras">
@@ -14,42 +16,41 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="sitio.css">
 </head>
-<body>
+<body id="inicio">
 
+<a class="salto" href="#contenido">Saltar al contenido</a>
 <header class="cabecera">
     <div class="contenedor">
         <a class="marca" href="#inicio" aria-label="Obradia, inicio"><img src="favicon.svg" alt="" width="34" height="34">Obradia</a>
         <nav class="menu" aria-label="Secciones">
-            <a href="#por-que">Por qué Obradia</a>
+            <a href="#recorrido">Cómo funciona</a>
             <a href="#funciones">Funciones</a>
-            <a href="#equipo">Para su equipo</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#capturas">Capturas</a>
         </nav>
-        <a class="boton boton--principal" href="https://app.obradia.net/">Acceder al portal</a>
+        <div class="acciones-cabecera">
+            <button class="boton boton--secundario tema" type="button" aria-label="Tema oscuro" aria-pressed="false" hidden>
+                <span aria-hidden="true" class="tema-luna">☾</span>
+                <span aria-hidden="true" class="tema-sol">☀</span>
+            </button>
+            <a class="boton acceso" href="https://app.obradia.net/">Acceder al portal</a>
+        </div>
     </div>
 </header>
 
-<main id="inicio">
+<main id="contenido">
 
     <section class="portada">
         <div class="contenedor">
             <div>
                 <span class="antetitulo">Gestión de obra para constructoras</span>
-                <h1>Su obra, al día y en un solo sitio.</h1>
-                <p class="intro">Del presupuesto al resultado de cada obra, con toda la información conectada. Presupuestos, compras, subcontratas, partes de trabajo, certificaciones, propuestas de factura y actas semanales en una sola aplicación web, también desde el móvil.</p>
+                <h1>Sepa cuánto le cuesta cada obra.</h1>
+                <p class="intro">Conecte presupuestos, compras y trabajo en obra para comparar el coste real con lo previsto mientras aún está a tiempo de actuar.</p>
                 <div class="acciones">
-                    <a class="boton boton--principal" href="https://app.obradia.net/">Acceder al portal</a>
-                    <a class="boton boton--secundario" href="#contacto">Solicitar una demostración</a>
+                    <a class="boton boton--principal" href="#contacto">Solicitar una demostración</a>
+                    <a class="enlace-recorrido" href="#recorrido">Ver cómo funciona <span aria-hidden="true">↓</span></a>
                 </div>
-                <ul class="etiquetas" aria-label="Algunas funciones">
-                    <li>Presupuestos .bc3</li>
-                    <li>Albaranes con IA</li>
-                    <li>Pedidos y subcontratas</li>
-                    <li>Partes y fichajes</li>
-                    <li>Certificaciones</li>
-                    <li>Cuenta de explotación</li>
-                </ul>
             </div>
 
             <figure class="maqueta" aria-label="Ejemplo ilustrativo del resumen de una obra">
@@ -73,7 +74,56 @@
         </div>
     </section>
 
-    <section class="seccion seccion--suave" id="por-que">
+    <section class="seccion seccion--suave recorrido" id="recorrido">
+        <div class="contenedor">
+            <span class="antetitulo">De la obra a la oficina</span>
+            <h2>De la foto de un albarán al coste real de la obra</h2>
+            <ol class="pasos">
+                <li><strong>Fotografíe el albarán</strong>Desde la obra, con el móvil.</li>
+                <li><strong>Revise lo que lee la IA</strong>Extrae proveedor, fecha, líneas y totales y avisa si detecta incoherencias.</li>
+                <li><strong>Vincule el albarán a la obra</strong>Impute las líneas al presupuesto, actualice lo recibido del pedido y registre la entrada en el inventario.</li>
+                <li><strong>La factura se concilia</strong>Con sus albaranes, y la persona responsable la firma con PIN.</li>
+                <li><strong>Consulte el impacto</strong>Vea el coste en la cuenta de explotación y las desviaciones frente al presupuesto.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="seccion" id="capturas">
+        <div class="contenedor">
+            <h2>Así se ve el portal</h2>
+            <div class="galeria-portal">
+                <figure class="captura-portal captura-portal--inicio">
+                    <a href="capturas/inicio-portal.webp" aria-label="Ampliar captura del inicio y el menú lateral del portal">
+                        <img src="capturas/inicio-portal.webp" width="728" height="810" loading="lazy" alt="Inicio de Obradia con el menú lateral de Obras, Compras y Producción, indicadores y un gráfico de ingresos y gastos">
+                    </a>
+                    <figcaption>
+                        <strong>Inicio y menú lateral</strong>
+                        Consulte los indicadores de su empresa y acceda a las funciones de obra, compras y producción según su perfil.
+                    </figcaption>
+                </figure>
+                <figure class="captura-portal">
+                    <a href="capturas/planificacion.webp" aria-label="Ampliar captura del diagrama de Gantt">
+                        <img src="capturas/planificacion.webp" width="1140" height="576" loading="lazy" alt="Diagrama del portal con partidas de obra, dependencias y barras de planificación por mes">
+                    </a>
+                    <figcaption>
+                        <strong>Planificación de obra</strong>
+                        Consulte las partidas, sus dependencias y el avance en el Gantt.
+                    </figcaption>
+                </figure>
+                <figure class="captura-portal">
+                    <a href="capturas/medicion.webp" aria-label="Ampliar captura de medición sobre plano">
+                        <img src="capturas/medicion.webp" width="1440" height="810" loading="lazy" alt="Visor del portal con un plano de muestra, herramientas de medición y un selector de partida">
+                    </a>
+                    <figcaption>
+                        <strong>Medición sobre plano</strong>
+                        Mida sobre un plano PDF y lleve la medición a la partida del presupuesto.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion" id="por-que">
         <div class="contenedor">
             <span class="antetitulo">Por qué Obradia</span>
             <h2>Su equipo conectado. Su obra bajo control.</h2>
@@ -108,17 +158,17 @@
                         <li>Importación y exportación .bc3, con coste y beneficio separados.</li>
                         <li>Banco y generadores de precios, versiones y estudios de licitación.</li>
                         <li>Medición sobre planos PDF y desde modelos BIM (IFC).</li>
-                        <li>Partidas propuestas por IA y pegado desde una hoja de cálculo.</li>
-                        <li>Gantt con camino crítico, línea base y carga de recursos.</li>
+                        <li>Borradores de partidas con IA a partir de una memoria. Revise cantidades y distinga precios de su banco y estimados.</li>
+                        <li>Gantt con camino crítico, líneas base y carga semanal de mano de obra y maquinaria.</li>
                     </ul>
                 </div>
                 <div class="tarjeta">
                     <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h13l5 5v5H3z"/><circle cx="7.5" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
                     <h3>Compras e inventario</h3>
                     <ul>
-                        <li>Solicitudes de material desde la obra.</li>
-                        <li>Comparativos de ofertas, precios por enlace y pedidos de compra.</li>
-                        <li>Albaranes, facturas y tickets leídos por IA a partir de una foto.</li>
+                        <li>Solicitudes de material con aprobación automática por debajo del umbral que fije su empresa y conversión a pedido.</li>
+                        <li>Comparativos de ofertas, adjudicación y seguimiento de lo pedido, recibido y pendiente.</li>
+                        <li>Lectura con IA de albaranes y facturas en PDF o foto, y de tickets desde el móvil. Revise los datos antes de registrarlos.</li>
                         <li>Firma de facturas con PIN y conciliación con sus albaranes.</li>
                         <li>Inventario por obra y almacén central.</li>
                     </ul>
@@ -129,17 +179,18 @@
                     <ul>
                         <li>Contratos por obra, por partidas o a precio cerrado.</li>
                         <li>Certificaciones a origen con la factura enlazada.</li>
-                        <li>Retenciones de garantía y documentación con caducidad.</li>
+                        <li>Retenciones de garantía y previsión de devoluciones.</li>
+                        <li>Documentación de obra, proveedores y subcontratas con avisos antes del vencimiento.</li>
                     </ul>
                 </div>
                 <div class="tarjeta">
                     <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20"/><path d="M5 20V9l7-5 7 5v11"/><path d="M10 20v-6h4v6"/></svg></div>
                     <h3>Obra y personal</h3>
                     <ul>
-                        <li>Partes de trabajo y fichajes desde el móvil, también por voz.</li>
-                        <li>Cuadrante semanal y registro de presencia con QR.</li>
-                        <li>Diario de obra, incidencias y tareas.</li>
-                        <li>Actas semanales con fotos, en PDF.</li>
+                        <li>Partes de personal y maquinaria desde el móvil, con dictado por voz y revisión del borrador.</li>
+                        <li>Fichajes validados por el encargado y comparados con el cuadrante semanal.</li>
+                        <li>Entrada y salida por QR para visitas y subcontratas, sin cuenta.</li>
+                        <li>Diario de obra y actas semanales firmadas, con fotos y exportación a PDF.</li>
                     </ul>
                 </div>
                 <div class="tarjeta">
@@ -148,7 +199,7 @@
                     <ul>
                         <li>Plantillas de inspección y plan de calidad por obra.</li>
                         <li>Visitas con fotos y firma en pantalla, en PDF.</li>
-                        <li>Los puntos no conformes abren una incidencia.</li>
+                        <li>Incidencias situadas sobre el plano, con fotos y responsable. Tareas con comprobante de cierre.</li>
                         <li>Expedientes de garantía con los plazos de la LOE.</li>
                     </ul>
                 </div>
@@ -156,47 +207,43 @@
                     <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
                     <h3>Control económico</h3>
                     <ul>
-                        <li>Certificaciones mensuales y certificación final de la obra.</li>
+                        <li>Certificaciones por espacios o porcentaje de partida, con revisión y liquidación final.</li>
                         <li>Propuestas de factura con retención y registro de cobros.</li>
-                        <li>Cuenta de explotación mensual frente al presupuesto.</li>
-                        <li>Flujo de caja y exportación para la gestoría.</li>
+                        <li>Explotación mensual con costes propios y comprometidos, y desviaciones por partida y capítulo.</li>
+                        <li>Flujo de caja con cobros y pagos reales y previstos, y exportación para la gestoría.</li>
                         <li>IVA por obra, incluida la inversión del sujeto pasivo.</li>
                     </ul>
+                    <p class="nota-facturacion">La factura se emite en su programa habitual.</p>
                 </div>
                 <div class="tarjeta">
                     <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c3 .2 5.5 2.6 5.5 5.8"/></svg></div>
-                    <h3>Equipo y clientes</h3>
+                    <h3>Equipo y comunicación</h3>
                     <ul>
                         <li>Roles y permisos: cada persona ve lo que necesita.</li>
-                        <li>Mensajes, comunicados, avisos de lo pendiente e informes por correo.</li>
-                        <li>Portal para que su cliente siga la obra y apruebe extras.</li>
+                        <li>Buscador de obras, proveedores y documentos, y avisos de firmas y propuestas pendientes.</li>
+                        <li>Informes semanales o mensuales por rol o persona.</li>
                     </ul>
                 </div>
                 <div class="tarjeta">
                     <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
                     <h3>Catálogos y empresa</h3>
                     <ul>
-                        <li>Clientes, proveedores y catálogo de materiales, importable desde Excel.</li>
+                        <li>Directorio de clientes e importación desde Excel de usuarios, proveedores y materiales.</li>
                         <li>Personal y maquinaria con su coste por hora.</li>
-                        <li>Imagen de su empresa y tema visual para cada usuario.</li>
+                        <li>Imagen de empresa y cuatro temas visuales en el portal, cada uno con modo claro y oscuro.</li>
                         <li>Copia de los correos que elija en un buzón de archivo.</li>
                     </ul>
                 </div>
+                <div class="tarjeta">
+                    <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 0 0 6 0l3-3a4 4 0 0 0-6-6l-2 2"/><path d="M14 11a4 4 0 0 0-6 0l-3 3a4 4 0 0 0 6 6l2-2"/></svg></div>
+                    <h3>Clientes y proveedores</h3>
+                    <ul>
+                        <li>Comparta avance, fotos, documentos y certificaciones en un portal de solo lectura por obra, con acceso por enlace y sin registro.</li>
+                        <li>Envíe un enlace aparte para aprobar o rechazar extras. Los aprobados pasan al presupuesto.</li>
+                        <li>Pida precios a proveedores por enlace y reciba sus ofertas en el comparativo, sin que tengan que crear una cuenta.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="seccion seccion--suave">
-        <div class="contenedor">
-            <span class="antetitulo">De la obra a la oficina</span>
-            <h2>Un albarán, de la obra a la cuenta de explotación</h2>
-            <ol class="pasos">
-                <li><strong>Fotografíe el albarán</strong>Desde la obra, con el móvil.</li>
-                <li><strong>La IA lee los datos</strong>Proveedor, número, fecha, líneas y totales, con aviso si algo no cuadra.</li>
-                <li><strong>Se imputa a partidas</strong>Descuenta del pedido y entra en el inventario.</li>
-                <li><strong>La factura se concilia</strong>Con sus albaranes, y la persona responsable la firma con PIN.</li>
-                <li><strong>El coste queda reflejado</strong>En la cuenta de explotación y en las desviaciones de la obra.</li>
-            </ol>
         </div>
     </section>
 
@@ -215,7 +262,7 @@
                 </div>
                 <div class="tarjeta">
                     <h3>Administración</h3>
-                    <p>Concilia facturas, envía las propuestas de factura, registra los cobros y exporta compras y gastos para la gestoría.</p>
+                    <p>Concilia facturas, aprueba solicitudes de material, envía propuestas a facturación y registra cobros. Exporta compras y gastos para la gestoría.</p>
                 </div>
                 <div class="tarjeta">
                     <h3>Gerencia</h3>
@@ -223,11 +270,11 @@
                 </div>
                 <div class="tarjeta">
                     <h3>Encargado</h3>
-                    <p>Organiza el cuadrante de sus obras, revisa los fichajes y la presencia del día y pide material desde el móvil.</p>
+                    <p>Organiza el cuadrante, valida y corrige fichajes, registra partes y consulta la presencia en sus obras.</p>
                 </div>
                 <div class="tarjeta">
                     <h3>Operario</h3>
-                    <p>Ficha la entrada y la salida, ve su obra del día y registra sus horas desde el móvil, sin complicaciones.</p>
+                    <p>Ficha la entrada y la salida desde el móvil y consulta sus fichajes, sus horas y su cuadrante semanal.</p>
                 </div>
             </div>
         </div>
@@ -243,16 +290,16 @@
                     <p>Cada constructora trabaja en su propia base de datos, separada de las demás.</p>
                 </div>
                 <div class="tarjeta">
-                    <h3>Nada se borra sin rastro</h3>
-                    <p>Los registros eliminados se conservan y queda anotado quién crea o modifica cada dato y cuándo.</p>
+                    <h3>Historial de cambios</h3>
+                    <p>Queda registrado quién crea o modifica cada dato y cuándo. Los registros de presencia se anonimizan al vencer su plazo de conservación.</p>
                 </div>
                 <div class="tarjeta">
                     <h3>Cada persona, lo suyo</h3>
-                    <p>Permisos por función: el jefe de obra ve sus obras y Administración, el área económica. Doble factor y bloqueo ante intentos fallidos.</p>
+                    <p>Cada persona accede a las obras y funciones que le corresponden. El inicio de sesión se bloquea tras intentos fallidos.</p>
                 </div>
                 <div class="tarjeta">
                     <h3>Soporte con su permiso</h3>
-                    <p>Nuestro equipo solo entra si usted lo autoriza, por tiempo limitado y con registro de lo que hace.</p>
+                    <p>El personal de soporte se identifica con doble factor. Solo accede a su empresa con autorización temporal y cada acceso queda registrado.</p>
                 </div>
                 <div class="tarjeta">
                     <h3>IA bajo su control</h3>
@@ -279,17 +326,36 @@
         </div>
     </section>
 
+    <section class="seccion seccion--suave" id="puesta-en-marcha">
+        <div class="contenedor">
+            <h2>Empiece con una de sus obras</h2>
+            <div class="rejilla rejilla--3">
+                <div class="tarjeta">
+                    <h3>Recupere lo que ya tiene</h3>
+                    <p>Importe el presupuesto en .bc3 y cargue proveedores y materiales desde Excel.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>Invite a su equipo</h3>
+                    <p>Importe los usuarios desde Excel, asígneles un rol y dé acceso a las obras que les correspondan.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>Ponga la obra en marcha</h3>
+                    <p>Use la lista de puesta en marcha para revisar qué datos y pasos faltan antes de empezar a registrar la actividad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="seccion" id="contacto">
         <div class="contenedor">
             <div class="llamada">
                 <div>
                     <h2>Vea Obradia con una de sus obras</h2>
-                    <p>Con un presupuesto suyo en .bc3 y unos albaranes reales, le mostramos en una demostración de una hora cómo se conectan los datos de su obra.</p>
+                    <p>En una hora le mostramos cómo importar su presupuesto, registrar albaranes y consultar el coste de la obra.</p>
                     <p>Escríbanos a <a class="enlace-claro" href="mailto:obradia.net@gmail.com?subject=Demostraci%C3%B3n%20de%20Obradia">obradia.net@gmail.com</a>.</p>
                 </div>
                 <div class="acciones">
                     <a class="boton boton--principal" href="mailto:obradia.net@gmail.com?subject=Demostraci%C3%B3n%20de%20Obradia">Solicitar una demostración</a>
-                    <a class="boton boton--secundario" href="https://app.obradia.net/">Acceder al portal</a>
                 </div>
             </div>
         </div>

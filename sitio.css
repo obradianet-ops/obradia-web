@@ -1,0 +1,131 @@
+:root {
+    --accion: #9d4528;
+    --accion-hover: #80381f;
+}
+
+html { scroll-padding-top: 88px; }
+
+.salto {
+    position: fixed;
+    top: 8px;
+    left: 12px;
+    z-index: 20;
+    padding: 10px 16px;
+    background: var(--surface);
+    color: var(--ink);
+    transform: translateY(-150%);
+}
+
+.salto:focus { transform: none; }
+a:focus-visible { outline: 3px solid var(--accion); outline-offset: 3px; }
+.portada a:focus-visible, .llamada a:focus-visible { outline-color: #f4b79e; }
+
+.boton--principal, .pasos li::before { background: var(--accion); color: #fff; }
+.boton--principal:hover { background: var(--accion-hover); }
+.boton { white-space: normal; }
+
+.portada {
+    background: var(--ink);
+    color: #fff;
+    padding: clamp(48px, 8vw, 112px) 0;
+}
+
+.portada .contenedor {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    gap: clamp(28px, 5vw, 64px);
+}
+
+.portada .antetitulo { color: #f4b79e; }
+.portada .intro { color: #e3dfd6; max-width: 42ch; }
+.portada .acciones { align-items: center; gap: 14px 22px; }
+.enlace-recorrido { color: #fff; font-weight: 500; text-underline-offset: 4px; }
+.maqueta { margin: 0; min-width: 0; color: var(--ink); }
+.maqueta__titulo { gap: 10px; flex-wrap: wrap; }
+.kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.kpi { min-width: 0; }
+.kpi strong { overflow-wrap: anywhere; }
+.gantt div { grid-template-columns: minmax(0, 8.5em) minmax(0, 1fr); }
+
+.recorrido .pasos { margin-top: 28px; }
+.nota-facturacion { margin: 14px 0 0; color: var(--ink-soft); font-size: .9rem; }
+
+@media (max-width: 960px) {
+    html { scroll-padding-top: 126px; }
+    .portada .contenedor { grid-template-columns: minmax(0, 1fr); }
+    .portada .maqueta { width: 100%; max-width: 540px; }
+    .cabecera .contenedor {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0 12px;
+        height: auto;
+        padding-top: 10px;
+    }
+    .cabecera .acceso { grid-column: 2; grid-row: 1; }
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        grid-column: 1 / -1;
+        gap: 0 18px;
+        margin: 4px 0 0;
+    }
+    .menu a { padding: 9px 0; font-size: .85rem; }
+}
+
+@media (max-width: 400px) {
+    .cabecera .acceso { font-size: .8rem; padding: 8px 10px; }
+    .menu { gap: 0 12px; }
+    .maqueta { padding: 16px; }
+    .kpi { padding: 10px; }
+    .kpi strong { font-size: 1.1rem; }
+}
+
+:root { color-scheme: light; }
+:root[data-tema="oscuro"] {
+    color-scheme: dark;
+    --bg: #1a1917;
+    --bg-soft: #23211e;
+    --surface: #2a2723;
+    --ink: #f5f1e8;
+    --ink-soft: #dcd5ca;
+    --muted: #bfb5a8;
+    --border: #4c453c;
+    --clay-dark: #f0ad91;
+    --clay-soft: #482f27;
+    --ok: #b6cea5;
+    --accion: #a34b2e;
+    --accion-hover: #8d3d24;
+    --shadow: 0 10px 40px rgba(0, 0, 0, .22);
+}
+
+[data-tema="oscuro"] .cabecera { background: rgba(30, 29, 26, .96); }
+[data-tema="oscuro"] .portada, [data-tema="oscuro"] .llamada { background: #11110f; }
+[data-tema="oscuro"] a:focus-visible { outline-color: #f4b79e; }
+
+.acciones-cabecera { display: flex; align-items: center; gap: 8px; }
+.acceso { background: #b4542f; color: #fff; }
+.acceso:hover { background: #a4482b; }
+.tema { justify-content: center; min-width: 42px; min-height: 42px; padding: 0; cursor: pointer; font: 1.3rem / 1 var(--font); }
+.tema[hidden], .tema-sol, [data-tema="oscuro"] .tema-luna { display: none; }
+[data-tema="oscuro"] .tema-sol { display: inline; }
+
+.galeria-portal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+.captura-portal { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+.captura-portal a { display: block; background: #edeae3; border-radius: 13px 13px 0 0; }
+.captura-portal img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; border-radius: inherit; }
+.captura-portal figcaption { padding: 18px 20px; color: var(--ink-soft); }
+.captura-portal figcaption strong { display: block; color: var(--ink); }
+.captura-portal--inicio { grid-row: span 2; align-self: start; }
+.captura-portal--inicio img { aspect-ratio: auto; }
+
+
+@media (max-width: 960px) {
+    .cabecera .acciones-cabecera { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 620px) {
+    .galeria-portal { grid-template-columns: minmax(0, 1fr); }
+    .captura-portal--inicio { grid-row: auto; }
+}
+@media (max-width: 400px) {
+    .tema { min-width: 36px; min-height: 36px; }
+    .acciones-cabecera { gap: 6px; }
+}
